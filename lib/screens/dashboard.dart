@@ -175,7 +175,9 @@ Las 48.136 toneladas de derivados lácteos que entraron en los primeros seis mes
                     ),
                   ),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, 'home');
+                },
               ),
             ],
           ),

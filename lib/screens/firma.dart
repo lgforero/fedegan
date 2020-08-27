@@ -152,7 +152,7 @@ class _FirmaState extends State<Firma> {
                       onPressed: () async {
                         if (_controller.isNotEmpty) {
                           //var data = await _controller.toPngBytes();
-                          Navigator.pushReplacementNamed(context, 'thanks');
+                          Navigator.pushReplacementNamed(context, 'dashboard');
 
                           // Navigator.of(context).push(
                           //   MaterialPageRoute(

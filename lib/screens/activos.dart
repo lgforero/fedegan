@@ -269,9 +269,7 @@ class _ActivosState extends State<Activos> {
                   ),
                 ),
                 onPressed: () {
-                  widget.pageController.animateToPage(1,
-                      duration: Duration(milliseconds: 700),
-                      curve: Curves.easeInOut);
+                  Navigator.pushNamed(context, 'firma');
                 },
               ),
             ],
