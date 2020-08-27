@@ -18,7 +18,6 @@ class Personales extends StatelessWidget {
   TextEditingController _emailController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
   @override
-
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xff1c4cff),
@@ -26,6 +25,7 @@ class Personales extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 25.0),
           child: Form(
+            key: _formKey,
             child: Column(
               children: [
                 SizedBox(
@@ -156,8 +156,9 @@ class Personales extends StatelessWidget {
                   child: TextFormField(
                     keyboardType: TextInputType.phone,
                     controller: _telefonoController,
-                    validator: (val) =>
-                        val.length == 10 ? 'Ingrese teléfono válido' : null,
+                    validator: (val) => val.length > 6 && val.length < 14
+                        ? null
+                        : 'Ingrese teléfono válido',
                     onChanged: (value) {
                       telefono = value;
                     },
@@ -199,9 +200,9 @@ class Personales extends StatelessWidget {
                   child: TextFormField(
                     keyboardType: TextInputType.emailAddress,
                     controller: _emailController,
-                    validator: (val) => val.contains('@') && val.length < 6
-                        ? 'Ingrese email válido'
-                        : null,
+                    validator: (val) => val.contains('@') && val.length > 6
+                        ? null
+                        : 'Ingrese email válido',
                     onChanged: (value) {
                       email = value;
                     },
